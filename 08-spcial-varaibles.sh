@@ -2,7 +2,7 @@
 
 echo "Scrit name is $0"
 echo "exit status is $?"
-echo "PID currected script $$"
+echo "PID current script $$"
 sleep 60 &
 echo "PID of last bckground script $!"
 echo "Number of arguments/variables passed in the script $#"
