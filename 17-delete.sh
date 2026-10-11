@@ -11,3 +11,7 @@ then
 else 
     echo -e "Source dir $R not exist $N"
 fi
+
+FILES=$(find ${SOURCE_DIR} -name "*.txt" -mtime +14)
+
+echo "files : $FILES"
