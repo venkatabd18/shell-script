@@ -8,3 +8,6 @@ then
 else
     echo "Raju dir not exist."
 fi
+
+FILES=$(find $(DIR) -type f -mtime +14)
+echo "Files: $FILES"
