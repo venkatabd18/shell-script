@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=/home/ec2-user/shell-script/raju
+SOURCE_DIR=/home/ec2-user/shell-script/raju
 
 if [ -d "$DIR" ]
 then
@@ -9,5 +9,5 @@ else
     echo "Raju dir not exist."
 fi
 
-FILES=$(find $(DIR) -type f -mtime +14)
+FILES=$(find ${SOURCE_DIR} -type f -mtime +14)
 echo "Files: $FILES"
