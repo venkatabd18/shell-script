@@ -7,4 +7,4 @@ sleep 60 &
 echo "PID of last bckground script $!"
 echo "Number of arguments/variables passed in the script $#"
 echo "All arguments/variables passed in the script $@"
-echo "arguments passed $*"
+echo "First argument passed $1"
