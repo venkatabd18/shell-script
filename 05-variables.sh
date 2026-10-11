@@ -1,4 +1,5 @@
 #!/bin/bash
 
-read -p "Please enter the username : USERNAME"
-echo "entered username is $USERNAME"
+read -r -p "Enter your username: " username
+
+echo "Welcome back, $username!"
