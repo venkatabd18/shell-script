@@ -19,6 +19,7 @@ VALIDATE(){
         echo "$2 is $R FAILED $N"
     else
         echo "$2 is $G SUCCESS $N"
+    fi
 }
 
 CHECK_ROOT
