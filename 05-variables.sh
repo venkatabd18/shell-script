@@ -2,5 +2,5 @@
 
 read -p "Please enter your username: " NAME
 echo "Entered username is $NAME"
-read -s "Please enter the password: " PASS
+read -ps "Please enter the password: " PASS
 echo "entered password is $PASS"
