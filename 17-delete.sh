@@ -7,3 +7,4 @@ then
     echo "raju dir exist."
 else
     echo "Raju dir not exist."
+fi
