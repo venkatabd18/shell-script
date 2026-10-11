@@ -1,19 +1,13 @@
 #!/bin/bash
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 SOURCE_DIR=/home/ec2-user/shell-script/raju
 
-if [ -d "$SOURCE_DIR" ]
+if [ -d $SOURCE_DIR ]
 then
-    echo "raju dir exist."
-else
-    echo "Raju dir not exist."
+    echo -e "Source dir $G exist $N"
+else 
+    echo -e "Source dir $R not exist $N"
 fi
-
-FILES=$(find ${SOURCE_DIR} -type f -mtime +14)
-echo "Files: $FILES"
-
-while IFS= read -r file
-do
-    echo "deleting filr is $file"
-    rm -rf $file
-done <<< $FILES
