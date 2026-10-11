@@ -11,3 +11,9 @@ fi
 
 FILES=$(find ${SOURCE_DIR} -type f -mtime +14)
 echo "Files: $FILES"
+
+while IFS= read -r file
+do
+    echo "deleting filr is $file"
+    rm -rf $file
+done <<< $FILES
