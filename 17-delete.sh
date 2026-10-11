@@ -2,7 +2,7 @@
 
 SOURCE_DIR=/home/ec2-user/shell-script/raju
 
-if [ -d "$DIR" ]
+if [ -d "$SOURCE_DIR" ]
 then
     echo "raju dir exist."
 else
