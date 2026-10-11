@@ -1,9 +1,9 @@
 #!/bin/bash
 
-Venkat=$1
-Raju=$2
+PERSON1=Venkat
+PERSON2=Raju
 
-echo "$1: Hi $2 How are you"
-echo "$2: Hi $1, i am fine"
-echo "$1: Hi $2 what you are doing"
-echo "$2: I am learning DevOps with AWS"
+echo "$PERSON1: Hi $PERSON2 How are you"
+echo "$PERSON2: Hi $PERSON1, i am fine"
+echo "$PERSON1: Hi $PERSON2 what you are doing"
+echo "$PERSON2: I am learning DevOps with AWS"
