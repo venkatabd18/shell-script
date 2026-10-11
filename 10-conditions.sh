@@ -1,11 +1,10 @@
 #!/bin/bash
-#create user Venkat if not available.
 
-id venkat
-if [ $? -ne 0 ]
+NUMBER=$1
+
+if [ $NUMBER -gt 20 ]
 then
-    echo "Username not exit. creating"
-    useradd venkat
+    echo "$NUMBER is greater than 20"
 else
-    echo "Username already exist. nothing to do.."
+    echo "$NUMBER is less than 20"
 fi
