@@ -2,4 +2,4 @@
 
 read -r -p "Enter your username: " username
 
-echo "Welcome back, $username!"
+echo "Welcome back, $username"
