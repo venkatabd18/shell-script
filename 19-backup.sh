@@ -8,3 +8,9 @@ then
     echo "app dir not exist"
     exit 1
 fi
+
+if [ ! -d $ARC_DIR ]
+then
+    echo "backup dir not exist"
+    exit 1
+fi
