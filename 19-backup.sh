@@ -15,6 +15,6 @@ fi
 #     exit 1
 # fi
 
-FILES=$(find . -name "*.log" -mtime +14)
+FILES=$(find /home/ec2-user/app -name "*.log" -mtime +14)
 
 echo file are $FILES
