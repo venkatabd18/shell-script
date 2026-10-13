@@ -14,3 +14,5 @@ else
 fi
 
 FILES=$(find /home/ec2-user/expense -name "*.log" -mtime +14)
+
+echo "files are: $FILES"
