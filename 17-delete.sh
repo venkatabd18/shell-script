@@ -12,3 +12,5 @@ else
     echo -e "$R $SOURCE_DIR does not exists $N"
     exit 1
 fi
+
+FILES=$(find /home/ec2-user/expense -name "*.log" -mtime +14)
