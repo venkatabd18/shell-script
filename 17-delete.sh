@@ -16,3 +16,8 @@ fi
 FILES=$(find /home/ec2-user/expense -name "*.log" -mtime +14)
 
 echo "files are: $FILES"
+
+while IFS= read -r file
+do
+    echo "deleting file is $file"
+done <<< $FILES
