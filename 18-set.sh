@@ -1,6 +1,12 @@
 #!/bin/bash
 
-set -xe
+set -e
+
+failure(){
+    echo failure at $1: $2
+}
+
+trap 'failure "${LINE}" "${BASH_COMMAND}"' ERR
 
 echo "Hello world"
 echoo "I am from world one"
