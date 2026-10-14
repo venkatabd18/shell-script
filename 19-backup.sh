@@ -16,9 +16,11 @@ fi
 if [ ! -d $SOURCE_DIR ]
 then
     echo "source dir not exist"
+    exit 1
 fi
 
 if [ ! -d $DESTIN_DIR ]
 then
     echo "Destination dir not exist"
+    exist 1
 fi
