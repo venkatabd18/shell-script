@@ -1,12 +1,13 @@
 #!/bin/bash
 
-set -e
-failure(){
-    echo failure $1:$2
-}
+set -e # setting the automatic exit, if we get error, set -ex for debug
 
-echo "Hello world"
-echo date is $(date)
-echoo i am from the error
+# failure(){
+#     echo "Failed at: $1:$2"
+# }
 
-trap 'failure "${LINENO}" "$BASH_COMMAND"' ERR
+# trap 'failure "${LINENO}" "$BASH_COMMAND"' ERR # ERR is the error signal
+
+echo "Hello World success"
+echooooo "Hello Wolrd failure"
+echo "Hello World after failure"
