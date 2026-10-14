@@ -2,9 +2,13 @@
 SOUR_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14}
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 UASAGE(){
-    echo "Usage::19-backup <source> <destination> <no.of days (optinal)>"
+    echo -e "$Y Usage::19-backup <source> <destination> <no.of days (optinal)> $N"
 }
 
 if [ $# -lt 2 ]
