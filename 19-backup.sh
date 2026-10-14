@@ -39,11 +39,12 @@ then
 else
     echo -e "$G Files are exist $N"
     ZIP_FILE=$DEST_DIR/app-log-$TIME_STAMP.zip
-    zip $ZIP_FILE $FILES -@
+    find $SOUR_DIR -name "*.log" -mtime +$DAYS | zip $ZIP_FILE -@
     if [ -f $ZIP_FILE ]
     then
         echo "Zipping is success"
     else
         echo "Zipping is failed. pls check"
+        exit 1
     fi
 fi
