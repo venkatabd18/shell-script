@@ -7,7 +7,7 @@ while IFS= read -r line
 do
     USAGE=$(df -hT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
     PARTITION=$(df -hT | grep xfs | awk -F " " '{print $NF}')
-    if [ $UASAGE -ge $DISK_THRESHOLD ]
+    if [ "$UASAGE" -ge "$DISK_THRESHOLD" ]
     then
         echo "$PARTITION is more than $DISK_THRESHOLD, current value: $USAGE. Please check"
     fi
