@@ -26,6 +26,6 @@ then
     exist 1
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
+FILES=$(find /home/ec2-user/app-log/ -name "*.log" -mtime +14)
 echo "files are $FILES"
 
