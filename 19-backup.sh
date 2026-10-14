@@ -1,13 +1,11 @@
 #!/bin/bash
 
 SOURCE_DIR=$1
-DESTIN_DIR=$2
-#DAYS=$3 #DAYS=${3: -14} --- If #3 is not given default is 14days
+DEST_DIR=$2
 DAYS=${3:-14}
-TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
 USAGE(){
-    echo "use::19-backup <source> <destination> <no.of days>"
+    echo "Usage:: 19-backup.sh <source> <destination> <no. of days (optional)>"
 }
 
 if [ $# -lt 2 ]
@@ -17,38 +15,12 @@ fi
 
 if [ ! -d $SOURCE_DIR ]
 then
-    echo "source dir not exist"
+    echo "source directory not exist"
     exit 1
 fi
 
-if [ ! -d $DESTIN_DIR ]
+if [ ! -d $DEST_DIR ]
 then
     echo "Destination dir not exist"
-    exist 1
-fi
-
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
-echo "files are $FILES"
-
-if [ ! -z $FILES ]
-then
-    echo "files exist"
-    ZIP_FILE=$DESTIN_DIR/app-log-$TIME_STAMP.zip
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip $ZIP_FILE -@
-    if [ -f $ZIP_FILE ]
-    then
-        echo "ziping success"
-        while IFS= read -r file
-        do
-            echo "deleating file is $file"
-            rm -rf $file
-        done <<< $FILES
-    else
-        echo "Zipping is failed"
-        exit 1
-    fi
-else
-    echo "No files older than 14days"
     exit 1
 fi
-
