@@ -26,7 +26,7 @@ then
     exist 1
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
 
 if [ ! -z $FILES ]
 then
