@@ -38,6 +38,11 @@ then
     if [ -f $ZIP_FILE ]
     then
         echo "ziping success"
+        while IFS= read -r file
+        do
+            echo "deleating file is $file"
+            rm -rf $file
+        done <<< $FILES
     else
         echo "Zipping is failed"
         exit 1
