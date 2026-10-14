@@ -27,4 +27,11 @@ then
 fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
-echo files are $FILES
+
+if [ ! -z $FILES ]
+then
+    echo "files exist"
+else
+    echo "No files older than 14days"
+    exit 1
+fi
