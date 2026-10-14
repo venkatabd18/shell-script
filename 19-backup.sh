@@ -5,8 +5,13 @@ DEST_DIR=$2
 DAYS=${3:-14}
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 USAGE(){
-    echo "Usage:: 19-backup.sh <source> <destination> <no. of days (optional)>"
+    echo -e "$R Usage $N:: 19-backup.sh <source> <destination> <no. of days (optional)>"
 }
 
 if [ $# -lt 2 ]
@@ -16,13 +21,13 @@ fi
 
 if [ ! -d $SOURCE_DIR ]
 then
-    echo "source directory not exist"
+    echo "$R source directory not exist $N"
     exit 1
 fi
 
 if [ ! -d $DEST_DIR ]
 then
-    echo "Destination dir not exist"
+    echo "$R Destination dir not exist $N"
     exit 1
 fi
 
@@ -32,22 +37,22 @@ echo "Files are : $FILES"
 #check $FILES variable empty or not
 if [[ ! -z $FILES ]]
 then
-    echo "Files are exist"
+    echo -e "$G Files are exist $N"
     ZIP_FILE=$DEST_DIR/app-log-$TIME_STAMP.zip
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip $ZIP_FILE -@
     if [ -f $ZIP_FILE ]
     then
-        echo "Zipping is success"
+        echo "$G Zipping is success $N"
         while IFS= read -r file
         do
-            echo "deleating file is $file"
+            echo "$Y deleating file is $file $N"
             rm -rf $file
         done <<< $FILES
     else
-        echo "Zipping is failed"
+        echo -e "$R Zipping is failed $N"
         exit 1
     fi
 else
-    echo "No files older than $DAYS"
+    echo -e "$Y No files older than $DAYS $N"
     exit 1
 fi
