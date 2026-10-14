@@ -9,7 +9,7 @@ then
     exit 1
 fi 
 
-if [ ! -d DEST_DIR ]
+if [ ! -d $DEST_DIR ]
 then
     echo "$DEST_DIR not exist"
     exit 1
