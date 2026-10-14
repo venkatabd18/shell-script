@@ -33,7 +33,7 @@ echo "files are $FILES"
 if [ ! -z $FILES ]
 then
     echo "files exist"
-    ZIP_FILE=$DESTIN_DIR/app-log-$TIME_STAMP
+    ZIP_FILE=$DESTIN_DIR/app-log-$TIME_STAMP.zip
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip $ZIP_FILE -@
     if [ -f $ZIP_FILE ]
     then
