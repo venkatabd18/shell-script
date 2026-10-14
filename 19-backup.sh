@@ -9,7 +9,7 @@ USAGE(){
     echo "use::19-backup <source> <destination> <no.of days>"
 }
 
-if [ $# -lt 3 ]
+if [ $# -lt 2 ]
 then
     USAGE
 fi
