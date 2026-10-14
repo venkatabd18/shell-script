@@ -3,7 +3,7 @@
 SOURCE_DIR=$1
 DESTIN_DIR=$2
 #DAYS=$3 #DAYS=${3: -14} --- If #3 is not given default is 14days
-DAYS=${3: -14}
+DAYS=${3:-14}
 
 USAGE(){
     echo "use::19-backup <source> <destination> <no.of days>"
