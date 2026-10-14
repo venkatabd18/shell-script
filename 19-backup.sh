@@ -24,13 +24,13 @@ then
     USAGE
 fi
 
-FILES=$/home/ec2-user/app/*.log
+FILE="/home/ec2-user/app/*.log"
 
-if [ -f $FILES ]
+if [ -f "$FILE" ]
 then
-    echo "files are exist"
+    echo "Files exists."
 else
-    echo "files are not exist"
-    exit 1
+    echo "Files does not exist."
 fi
+
 
