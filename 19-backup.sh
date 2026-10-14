@@ -2,7 +2,8 @@
 
 SOURCE_DIR=$1
 DESTIN_DIR=$2
-DAYS=$3 #DAYS=${3: -14} --- If #3 is not given default is 14days
+#DAYS=$3 #DAYS=${3: -14} --- If #3 is not given default is 14days
+DAYS=${3: -14}
 
 USAGE(){
     echo "use::19-backup <source> <destination> <no.of days>"
@@ -24,3 +25,6 @@ then
     echo "Destination dir not exist"
     exist 1
 fi
+
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+echo files are $FILES
