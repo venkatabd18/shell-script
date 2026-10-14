@@ -15,3 +15,17 @@ if [ $# -lt 2 ]
 then 
     UASAGE
 fi 
+
+if [ ! -d $SOUR_DIR ]
+then 
+    echo -e "$R Source does not exist $N .. Pls check"
+    exit 1
+fi
+
+if [ ! -d $DEST_DIR ]
+then 
+    echo -e "$R destinatio does not exist $N .. Pls check"
+    exit 1
+fi
+
+
