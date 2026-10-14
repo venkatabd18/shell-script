@@ -2,11 +2,11 @@
 
 set -xe # setting the automatic exit, if we get error, set -ex for debug
 
-# failure(){
-#     echo "Failed at: $1:$2"
-# }
+failure(){
+    echo "Failed at: $1:$2"
+}
 
-# trap 'failure "${LINENO}" "$BASH_COMMAND"' ERR # ERR is the error signal
+trap 'failure "${LINENO}" "$BASH_COMMAND"' ERR # ERR is the error signal
 
 echo "Hello World success"
 echooooo "Hello Wolrd failure"
