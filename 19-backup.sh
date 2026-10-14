@@ -47,7 +47,7 @@ else
         do 
             echo "deleting file is $file"
             rm -rf $file
-        done <<< $ $FILES
+        done <<< $FILES
     else
         echo "Zipping is failed. pls check"
         exit 1
