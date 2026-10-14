@@ -3,6 +3,7 @@
 SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14}
+TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
 USAGE(){
     echo "Usage:: 19-backup.sh <source> <destination> <no. of days (optional)>"
@@ -32,6 +33,15 @@ echo "Files are : $FILES"
 if [ ! -z $FILES ]
 then
     echo "Files are exist"
+    ZIP_FILE=$DEST_DIR/app-log-$TIME_STAMP.zip
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip $ZIP_FILE -@
+    if [ -f $ZIP_FILE ]
+    then
+        echo "Zipping is success"
+    else
+        echo "Zipping is failed"
+        exit 1
+    fi
 else
     echo "No files older than $DAYS"
     exit 1
