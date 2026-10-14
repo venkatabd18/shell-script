@@ -31,7 +31,7 @@ fi
 FILES=$(find $SOUR_DIR -name "*.log" -mtime +$DAYS)
 echo "Files are: $FILES"
 
-if [ -z $FILES ]
+if [[ -z $FILES ]]
 then 
     echo -e "$Y No files whic are older than 14 days $N"
     exit 1
