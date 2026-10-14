@@ -18,4 +18,8 @@ then
     echo "$DEST_DIR not exist"
     exit 1
 fi
-USAGE
+
+if [ $# -lt 2 ]
+then
+    USAGE
+fi
