@@ -24,13 +24,8 @@ then
     USAGE
 fi
 
-FILE="/home/ec2-user/app/*.log"
+FILES=$(find $SOUR_DIR -name "*.log" -mtime +14)
 
-if [ -f "$FILE" ]
-then
-    echo "Files exists."
-else
-    echo "Files does not exist."
-fi
+echo "Files are $FILES"
 
 
