@@ -25,12 +25,14 @@ then
     exit 1
 fi
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 echo "Files are : $FILES"
 
 #check $FILES variable empty or not
 
-if [ ! -z $FILES ]
+if [ -z $FILES ]
 then
-    echo "files are exist"
+    echo "No files grater than $DAYS old"
+else
+    echo "Files exist"
 fi
