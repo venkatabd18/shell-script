@@ -12,4 +12,5 @@ fi
 if [ ! -d DEST_DIR ]
 then
     echo "$DEST_DIR not exist"
+    exit 1
 fi
