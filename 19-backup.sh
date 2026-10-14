@@ -24,7 +24,7 @@ then
     USAGE
 fi
 
-FILES=$(/home/ec2-user/app/*.log)
+FILES=$/home/ec2-user/app/*.log
 
 if [ -f $FILES ]
 then
