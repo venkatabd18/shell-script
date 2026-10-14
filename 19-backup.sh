@@ -6,6 +6,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%s)
 
 UASAGE(){
     echo -e "$Y Usage::19-backup <source> <destination> <no.of days (optinal)> $N"
@@ -37,4 +38,12 @@ then
     exit 1
 else
     echo -e "$G Files are exist $N"
+    ZIP_FILE=$DEST_DIR/app-log-$TIME_STAMP.zip
+    zip $ZIP_FILE $FILES -@
+    if [ -f $ZIP_FILE ]
+    then
+        echo "Zipping is success"
+    else
+        echo "Zipping is failed. pls check"
+    fi
 fi
