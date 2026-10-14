@@ -1,31 +1,15 @@
 #!/bin/bash
 
-SOUR_DIR=/home/ec2-user/app
-DEST_DIR=/home/ec2-user/backup
+SOURCE_DIR=$1
+DESTIN_DIR=$2
+DAYS=$3 #DAYS=${3: -14} --- If #3 is not given default is 14days
 
 USAGE(){
-    echo "use case: 19-backup.sh <source_dir> <destination_dir> <no.of days>"
+    echo "use::19-backup <source> <destination> <no.of days>"
 }
 
-if [ ! -d $SOUR_DIR ]
-then
-    echo "$SOUR_DIR not exist"
-    exit 1
-fi 
-
-if [ ! -d $DEST_DIR ]
-then
-    echo "$DEST_DIR not exist"
-    exit 1
-fi
-
-if [ $# -lt 2 ]
+if [ $# -lt 3 ]
 then
     USAGE
 fi
-
-FILES=$(find $SOUR_DIR -name "*.log" -mtime +14)
-
-echo "Files are $FILES"
-
 
