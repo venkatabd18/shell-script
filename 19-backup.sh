@@ -29,3 +29,8 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 echo "Files are : $FILES"
 
 #check $FILES variable empty or not
+if [ ! -z $FILES ]
+then
+    echo "Files are exist"
+    exit 1
+fi
