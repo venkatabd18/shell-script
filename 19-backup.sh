@@ -32,5 +32,7 @@ echo "Files are : $FILES"
 if [ ! -z $FILES ]
 then
     echo "Files are exist"
+else
+    echo "No files older than $DAYS"
     exit 1
 fi
