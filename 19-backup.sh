@@ -29,10 +29,3 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 echo "Files are : $FILES"
 
 #check $FILES variable empty or not
-
-if [ -z $FILES ]
-then
-    echo "No files grater than $DAYS old"
-else
-    echo "Files exist"
-fi
