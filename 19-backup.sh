@@ -23,3 +23,14 @@ if [ $# -lt 2 ]
 then
     USAGE
 fi
+
+FILES=$(/home/ec2-user/app/*.log)
+
+if [ -f $FILES ]
+then
+    echo "files are exist"
+else
+    echo "files are not exist"
+    exit 1
+fi
+
