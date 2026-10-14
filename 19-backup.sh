@@ -28,4 +28,6 @@ then
     exit 1
 fi
 
+FILES=$(find $SOUR_DIR -name "*.log" -mtime +$DAYS)
+echo "Files are: $FILES"
 
