@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -xe # setting the automatic exit, if we get error, set -ex for debug
+set -e # setting the automatic exit, if we get error, set -ex for debug
 
 failure(){
     echo "Failed at: $1:$2"
