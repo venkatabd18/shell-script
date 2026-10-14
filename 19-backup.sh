@@ -42,14 +42,14 @@ then
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip $ZIP_FILE -@
     if [ -f $ZIP_FILE ]
     then
-        echo "$G Zipping is success $N"
+        echo "Zipping is success"
         while IFS= read -r file
         do
             echo "$Y deleating file is $file $N"
             rm -rf $file
         done <<< $FILES
     else
-        echo -e "$R Zipping is failed $N"
+        echo -e "Zipping is failed"
         exit 1
     fi
 else
